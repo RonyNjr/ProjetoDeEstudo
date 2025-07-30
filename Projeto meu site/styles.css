@@ -6,10 +6,9 @@
 }
 
 body {
-    margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #2193b0, #6dd5ed, #8e44ad);
-  color: white;
+   background-color: #000;
+   color : #fff;
+   font-size: 16px;
 }
 
 header {
@@ -38,22 +37,34 @@ header {
 }
 
 section {
+    background: linear-gradient(135deg, #2193b0, #6dd5ed, #8e44ad);
+    height: 100vh;
+    position: relative;
+
+    & .list {
+        width: 70vw;
+        height: 100%;
+        margin: auto;
+        position: relative;
+    
+    
+
+
+       & .item {
+         position: absolute;
+         inset: 0;
   
-  & .item {
-    position: absolute;
-    inset: 0;
-  
-     & .car-img {
-     position: absolute;
-     top: 50%;
-     left: 15%;
-     transform: translateY(-50%);
-     width: 70%;
-       & img {
-            width: 100%;
-            transform: rotate(-30deg);
-        }
-     }
+         & .car-img {
+           position: absolute;
+           top: 50%;
+           left: 15%;
+           transform: translateY(-50%);
+           width: 70%;
+          & img {
+               width: 100%;
+               transform: rotate(-30deg);
+             }
+         }
 
      & .content {
          position: absolute;
@@ -91,11 +102,11 @@ section {
             background-color: #beff1b;
             color: #000; 
             font-weight: bold;
-
          }
+        }
+      }
      }
-  }
-   
+
   .arrows {
     width: 70vw;
     position: absolute;
@@ -113,8 +124,21 @@ section {
 
 
         & button {
+            top: 60%;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
             & img {
-                 width: 100px;
+                 width: 30px;
+                 margin-top: 4px;
+                 cursor: pointer;
+            }
+
+            &:hover {
+                background-color: #beff1b;
+
             }
         }
     }
@@ -155,6 +179,3 @@ section {
     }
 
 }
-
-
-    
