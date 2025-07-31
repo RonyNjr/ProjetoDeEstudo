@@ -57,7 +57,7 @@ section {
          & .car-img {
            position: absolute;
            top: 50%;
-           left: 15%;
+           left: 5%;
            transform: translateY(-50%);
            width: 70%;
           & img {
@@ -73,7 +73,7 @@ section {
          height: 100%;
          display: flex;
          flex-direction: column;
-         justify-content: end;
+         justify-content: center;
          align-items: end;
          gap: 20px;
 
@@ -105,6 +105,14 @@ section {
          }
         }
       }
+        &::before {
+         content: '';
+         position: absolute;
+         height: 200px;
+         width: 100%;
+         top: 50%;
+         border-top: 1px solid #fff;
+        }
      }
 
   .arrows {
