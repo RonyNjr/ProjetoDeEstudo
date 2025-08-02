@@ -1,3 +1,10 @@
+:root {
+    --primary-color: #beff1b;
+    --secondary-color: #8e44ad;
+    --bg-gradient: linear-gradient(135deg, #2193b0, #6dd5ed, #8e44ad);
+    --border-radius: 30px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -22,248 +29,221 @@ header {
     grid-template-columns: 1fr 600px;
     gap: 50px;
     z-index: 2;
-
-    & img {
-        width: 250px;
-    }
-
-
-    & nav {
-        & ul {
-            display: grid;
-            grid-template-columns: repeat(3, 200px);
-        }
-
-    }
 }
 
-section {
-    background: linear-gradient(135deg, #2193b0, #6dd5ed, #8e44ad);
+header img {
+    width: 250px;
+}
+
+header nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+}
+
+section.container {
+    background: var(--bg-gradient);
     height: 100vh;
     position: relative;
-
-    & .list {
-        width: 70vw;
-        height: 100%;
-        margin: auto;
-        position: relative;
-
-
-
-
-        & .item {
-            position: absolute;
-            inset: 0;
-
-            & .car-img {
-                position: absolute;
-                top: 50%;
-                left: 5%;
-                transform: translateY(-50%);
-                width: 70%;
-
-                & img {
-                    width: 100%;
-                    transform: rotate(-30deg);
-                }
-            }
-
-            & .content {
-                position: absolute;
-                right: 100px;
-                width: 70%;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: end;
-                gap: 20px;
-
-                & .car-information {
-                    font-weight: bold;
-                }
-
-                & h2 {
-                    font-size: 8em;
-                    line-height: 1em;
-                    font-family: "League Gothic", sans-serif;
-                }
-
-                & .description {
-                    color: #d9d9d9;
-                    font-size: 12px;
-                    text-align: right;
-                    max-width: 400px;
-                }
-
-                & .information {
-                    border-radius: 30px;
-                    height: 35px;
-                    width: 120px;
-                    text-transform: uppercase;
-                    border: 2px solid #8e44ad;
-                    background-color: #beff1b;
-                    color: #000;
-                    font-weight: bold;
-                    font-family: "League Gothic", sans-serif;
-                }
-            }
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            height: 200px;
-            width: 100%;
-            top: 50%;
-            border-top: 1px solid #fff;
-        }
-    }
-
-    .arrows {
-        width: 70vw;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -25px);
-        display: flex;
-        justify-content: space-between;
-
-        & button:nth-child(1) {
-            & img {
-                transform: scale(-1);
-            }
-        }
-
-
-        & button {
-            top: 60%;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-
-            & img {
-                width: 30px;
-                margin-top: 4px;
-                cursor: pointer;
-            }
-
-            &:hover {
-                background-color: #beff1b;
-
-            }
-        }
-    }
-
-    .indicadores {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%);
-        height: 200px;
-        width: 90vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: end;
-        gap: 15px;
-
-        & .number {
-            font-size: 5em;
-            font-family: "League Gothic", sans-serif;
-        }
-
-        & ul {
-            display: flex;
-            gap: 10px;
-
-            & li {
-                width: 50px;
-                height: 5px;
-                background-color: #beff1b;
-                border-radius: 5px;
-                transition: 0.5s;
-            }
-
-            & .active {
-                background-color: #fff;
-            }
-        }
-
-    }
-
 }
 
-/* animacoes */
-section {
+section.container .list {
+    width: 70vw;
+    height: 100%;
+    margin: auto;
+    position: relative;
+}
 
-    &.list {
+section.container .list .item {
+    position: absolute;
+    inset: 0;
+}
 
-        & .item {
-            transform: translateX(100vw);
-            transition: 0.5s;
+section.container .list .item .car-img {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    width: 70%;
+}
 
-            & .car-img {
-                & img {
-                    transform: rotate(0);
-                    transition: 0.5s;
-                    transition-delay: 0.3s;
-                    opacity: 0;
+section.container .list .item .car-img img {
+    width: 100%;
+    transform: rotate(-30deg);
+}
 
-                }
-            }
+section.container .list .item .content {
+    position: absolute;
+    right: 100px;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    gap: 20px;
+}
 
-            & .content {
+section.container .list .item .content .car-information {
+    font-weight: bold;
+}
 
-                & .car-information,
-                h2,
-                .description,
-                .information {
-                    transform: translateX(200px);
-                    transition: 0.7s;
-                    transition-delay: 0.3s;
+section.container .list .item .content h2 {
+    font-size: 8em;
+    line-height: 1em;
+    font-family: "League Gothic", sans-serif;
+}
 
-                }
+section.container .list .item .content .description {
+    color: #d9d9d9;
+    font-size: 12px;
+    text-align: right;
+    max-width: 400px;
+}
 
-                & h2 {
-                    transition-delay: 0.5s;
-                }
+section.container .list .item .content .information {
+    border-radius: var(--border-radius);
+    height: 35px;
+    width: 120px;
+    text-transform: uppercase;
+    border: 2px solid var(--secondary-color);
+    background-color: var(--primary-color);
+    color: #000;
+    font-weight: bold;
+    font-family: "League Gothic", sans-serif;
+}
 
-                & .description {
-                    transition-delay: 0.7s;
-                }
+section.container .list::before {
+    content: '';
+    position: absolute;
+    height: 200px;
+    width: 100%;
+    top: 50%;
+    border-top: 1px solid #fff;
+}
 
-                & .information {
-                    transition-delay: 0.9s;
-                }
+section.container .arrows {
+    width: 70vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -25px);
+    display: flex;
+    justify-content: space-between;
+}
 
-            }
-        }
+section.container .arrows button:nth-child(1) img {
+    transform: scale(-1, 1);
+}
 
-        & .active {
-            transform: translateX(0);
-            transition: 0.5s;
-            opacity: 1;
+section.container .arrows button {
+    top: 60%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-            & .car-img {
-                & img {
-                    transform: rotate(-20deg);
-                }
-            }
+section.container .arrows button img {
+    width: 30px;
+    margin-top: 4px;
+    cursor: pointer;
+}
 
-            & .content {
+section.container .arrows button:hover {
+    background-color: var(--primary-color);
+}
 
-                & .car-information,
-                h2,
-                .description,
-                .information {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
+section.container .indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 200px;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 15px;
+}
 
+section.container .indicator .number {
+    font-size: 5em;
+    font-family: "League Gothic", sans-serif;
+}
 
-            }
-        }
-    }
+section.container .indicator ul {
+    display: flex;
+    gap: 10px;
+}
+
+section.container .indicator ul li {
+    width: 50px;
+    height: 5px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+section.container .indicator ul li.active {
+    background-color: #fff;
+}
+
+/* Animações */
+section.container .list .item {
+    transform: translateX(100vw);
+    transition: 0.5s;
+    opacity: 0;
+}
+
+section.container .list .item .car-img img {
+    transform: rotate(0);
+    transition: 0.5s;
+    transition-delay: 0.3s;
+    opacity: 0;
+}
+
+section.container .list .item .content .car-information,
+section.container .list .item .content h2,
+section.container .list .item .content .description,
+section.container .list .item .content .information {
+    transform: translateX(200px);
+    transition: 0.7s;
+    transition-delay: 0.3s;
+    opacity: 0;
+}
+
+section.container .list .item .content h2 {
+    transition-delay: 0.5s;
+}
+
+section.container .list .item .content .description {
+    transition-delay: 0.7s;
+}
+
+section.container .list .item .content .information {
+    transition-delay: 0.9s;
+}
+
+section.container .list .item.active {
+    transform: translateX(0);
+    transition: 0.5s;
+    opacity: 1;
+}
+
+section.container .list .item.active .car-img img {
+    transform: rotate(-20deg);
+    opacity: 1;
+}
+
+section.container .list .item.active .content .car-information,
+section.container .list .item.active .content h2,
+section.container .list .item.active .content .description,
+section.container .list .item.active .content .information {
+    transform: translateX(0);
+    opacity: 1;
 }
